@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import { Product } from '../catalog/catalog.component';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +14,7 @@ import { RouterModule } from '@angular/router';
 export class CartComponent implements OnInit {
   items: Product[] = [];
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private router: Router) {}
 
   totalPrice: number = 0;
 
@@ -38,6 +38,15 @@ export class CartComponent implements OnInit {
 
   orderTotal: number = 0;
   startOrder(): void {
+    const isStoreduserLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+    if (!isStoreduserLoggedIn) {
+      alert('Please log in to continue');
+      this.router.navigate(['/profile']);
+      return;
+    }
+
     localStorage.setItem('orderTotal', this.totalPrice.toString());
+    this.router.navigate(['/order']);
   }
 }

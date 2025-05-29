@@ -30,6 +30,7 @@ export class ProfileDetailedComponent {
   cvv: string = '';
   payby(): void {
     console.log('Changes saved', this.cardn, this.dateofexp, this.cvv);
+    localStorage.setItem('payBy', this.cardn);
   }
 
   logout(): void {
