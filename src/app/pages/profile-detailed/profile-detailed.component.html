@@ -1,0 +1,65 @@
+<h1>Your shipping info</h1>
+
+<form (ngSubmit)="shipto()" #regForm="ngForm" class="personal-info-form">
+  <div class="personal-info-form">
+    <div class="personal-info-form">
+      <label for="country">Enter your country :</label>
+      <input
+        type="text"
+        name="country"
+        [(ngModel)]="country"
+        placeholder="Your country"
+      />
+    </div>
+    <label for="city">Enter your city :</label>
+    <input type="text" name="city" [(ngModel)]="city" placeholder="Your city" />
+  </div>
+
+  <div class="personal-info-form">
+    <label for="adress">Enter your adress :</label>
+    <input
+      type="text"
+      name="adress"
+      [(ngModel)]="adress"
+      placeholder="Your shipping adress"
+    />
+  </div>
+
+  <div class="personal-info-form">
+    <button type="submit">Save changes</button>
+  </div>
+</form>
+
+<h1>Your payment info</h1>
+
+<form (ngSubmit)="payby()" #regForm="ngForm" class="payment-info-form">
+  <div class="payment-info-form">
+    <div class="payment-info-form">
+      <label for="card number">Enter your card number :</label>
+      <input
+        type="number"
+        name="cardn"
+        [(ngModel)]="cardn"
+        placeholder="0000 0000 0000 0000"
+      />
+    </div>
+    <label for="dateofexp">Card expires in :</label>
+    <input
+      type="text"
+      name="dateofexp"
+      [(ngModel)]="dateofexp"
+      placeholder="00/00"
+    />
+  </div>
+
+  <div class="payment-info-form">
+    <label for="cvv">Enter your card's cvv :</label>
+    <input type="password" name="cvv" [(ngModel)]="cvv" placeholder="***" />
+  </div>
+
+  <div class="payment-info-form">
+    <button type="submit">Save changes</button>
+  </div>
+</form>
+
+<button (click)="logout()">Log out</button>
