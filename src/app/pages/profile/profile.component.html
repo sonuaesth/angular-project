@@ -1,0 +1,72 @@
+<form (ngSubmit)="register()" #regForm="ngForm" class="regstration-form">
+  <div class="registration-form">
+    <div class="login-form">
+      <label for="name">Enter your name and surname :</label>
+      <input
+        type="text"
+        name="namensurn"
+        [(ngModel)]="namensurn"
+        placeholder="Name and Surname"
+      />
+    </div>
+    <label for="username">Enter your username :</label>
+    <input
+      type="text"
+      name="Rusername"
+      [(ngModel)]="Rusername"
+      placeholder="Username"
+    />
+  </div>
+
+  <div class="registration-form">
+    <label for="password">Enter your password :</label>
+    <input
+      type="password"
+      name="Rpassword"
+      [(ngModel)]="Rpassword"
+      placeholder="Password"
+    />
+  </div>
+
+  <div class="registration-form">
+    <label for="phone number">Enter your phone number :</label>
+    <input
+      type="text"
+      name="Rphonenum"
+      [(ngModel)]="Rphonenum"
+      placeholder="Phone Number"
+    />
+  </div>
+
+  <div class="registration-form">
+    <!-- <input type="submit" value="Register" /> -->
+    <button type="submit">Register</button>
+  </div>
+</form>
+
+<h2>or log in</h2>
+
+<form (ngSubmit)="login()" #loginForm="ngForm" class="login-form">
+  <div class="login-form">
+    <label for="Lsername">Enter your username :</label>
+    <input
+      type="text"
+      name="Lusername"
+      [(ngModel)]="Lusername"
+      placeholder="Username"
+    />
+  </div>
+
+  <div class="login-form">
+    <label for="Lpassword">Enter your password :</label>
+    <input
+      type="password"
+      name="Lpassword"
+      [(ngModel)]="Lpassword"
+      placeholder="Password"
+    />
+  </div>
+  <div class="login-form">
+    <input type="submit" value="Log in" />
+  </div>
+</form>
