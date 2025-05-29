@@ -14,8 +14,17 @@ export class OrderComponent {
   shippingAdr: string = '';
 
   payBy: number = 0;
+  orderDate: string = '';
+  deliveryDate: string = '';
 
   ngOnInit(): void {
+    const now = new Date();
+    const delivery = new Date();
+    delivery.setDate(now.getDate() + 7);
+
+    this.orderDate = now.toLocaleDateString('en-GB');
+    this.deliveryDate = delivery.toLocaleDateString('en-GB');
+
     const stored = localStorage.getItem('orderTotal');
     this.totalPrice = stored ? parseFloat(stored) : 0;
 
