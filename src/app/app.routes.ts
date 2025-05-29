@@ -8,6 +8,7 @@ import { ReviewsComponent } from './pages/reviews/reviews.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProfileDetailedComponent } from './pages/profile-detailed/profile-detailed.component';
 import { OrderComponent } from './pages/order/order.component';
+import { OrderDoneComponent } from './pages/order-done/order-done.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -19,4 +20,5 @@ export const routes: Routes = [
   { path: 'profile-detailed', component: ProfileDetailedComponent },
   { path: 'product/:id', component: ProductDetailComponent },
   { path: 'order', component: OrderComponent },
+  { path: 'order-done', component: OrderDoneComponent },
 ];
